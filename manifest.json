@@ -1,0 +1,29 @@
+{
+  "name": "Hello World",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "My first Chrome extension.",
+  "permissions": [
+    "notifications",
+    "bookmarks",
+    "activeTab",
+    "geolocation"
+  ],
+  "browser_action": {
+    "default_icon": "Images/in.png",
+    "default_popup": "index.html"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "chrome_url_overrides" : {
+    "newtab": "dashboard/index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["script.js"]
+    }
+  ]
+}

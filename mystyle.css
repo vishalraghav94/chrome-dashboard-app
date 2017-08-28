@@ -1,0 +1,296 @@
+@font-face {
+    font-family: open_sans_l;
+    src: url(OpenSans-Light.woff);
+}
+@font-face {
+    font-family: open_sans_n;
+    src: url(OpenSans-Regular.woff);
+}
+@font-face {
+    font-family: open_sans_b;
+    src: url(OpenSans-Bold.woff);
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: open_sans_l;
+}
+
+#logo {
+    height: 39px;
+}
+.sign {
+    background-color: #3e71d7;
+    display: inline-block;
+    padding: 8px 12px;
+    font-size: 12px;
+    border-radius: 3px;
+    color: white;
+    float: right;
+    cursor: pointer;
+}
+header {
+    padding: 23px 30px 14px 41px;
+    background-color: #f1f1f1;
+}
+.content{
+    padding: 45px;
+    text-align: center;
+    position: relative;
+}
+.create{
+    color: rgb(100,100,100);
+    font-weight: 300;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+.promo{
+    text-align: center;
+    display: inline-block;
+    margin-right: 30px;
+    margin-left: 30px;
+    vertical-align: top;
+    margin-top: 20px;
+}
+.heading{
+    color: rgb(120,120,120);
+    font-weight: 100;
+    margin-bottom: 13px;
+}
+.promo_content{
+    color: rgb(130,130,130);
+    font-size: 12px;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+.promo_img{
+    margin-bottom: 81px;
+}
+.form {
+    display: inline-block;
+    background-color: rgb(240,240,240);
+    width: 322px;
+    padding: 22px;
+    text-align: left;
+    font-size: 13px;
+    margin-left: 30px;
+    margin-right: 30px;
+    position: relative;
+    font-family: open_sans_b;
+}
+.text_input{
+    height: 19px;
+    margin-top: 5px;
+    width: 43%;
+    padding: 5px 9px;
+    font-size: 14px;
+    border: 1px solid rgb(220,220,220);
+}
+.text_input:hover , .country_code:hover{
+    box-shadow: inset 2px 2px 2px rgba(220,220,220,0.3);
+    border: 1px solid rgb(210,210,210);
+}
+.full_line{
+    width: 94%;
+}
+.current{
+    text-decoration: none;
+    color: #15c;
+    font-family: open_sans_n;
+}
+.bday{
+    margin-right: 5px;
+    width: 15%;
+}
+.bmonth{
+    height: 29px;
+    margin-top: 5px;
+    margin-right: 5px;
+    width: 40%;
+    padding: 5px 8px;
+    font-size: 13px;
+    background-color: rgb(240,240,240);
+    border: 1px solid rgb(200,200,200);
+}
+.bmonth:hover{
+    box-shadow: 1px 1px 3px rgba(120,120,120,0.3);
+}
+.sign:hover{
+    box-shadow: inset 2px 2px 3px rgba(100,100,100,0.3);
+    background-color: #3e51d7;
+}
+.learn:hover{
+    text-decoration: underline;
+}
+.byear{
+    width: 27%;
+}
+.Gender{
+    margin-right: 0;
+    width: 100%;
+}
+.country_code{
+    height: 31px;
+    width: 100%;
+    margin-top: 5px;
+    background-color: white;
+    border: 1px solid rgb(220,220,220);
+}
+.Mobile{
+    border: 1px solid white;
+    height: 16px;
+    margin-left: 15px;
+    width:75%;
+    font-size: 14px;
+    padding: 6px 9px;
+    background-color: transparent;
+}
+
+.indian_flag{
+    width:24px;
+    height: 15px;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: 6px;
+}
+input:focus{
+    border: 1px solid blue;
+    padding: 5px 9px;
+    outline:none;
+}
+.footer_list li{
+    display: inline;
+    font-size: 10px;
+    margin: 5px;
+    font-family: open_sans_n;
+}
+.footer_list{
+    display: inline;;
+}
+.learn_more{
+    font-size: 13px;
+    font-family: open_sans_n;
+    color: rgb(150,150,150);
+}
+.bmonth , .language{
+    outline: none;
+}
+footer{
+    border: 1px solid #f1f1f1;
+    padding: 6px 10px 12px 26px;
+    margin-top: 23px;
+}
+b{
+    font-family: open_sans_b;
+}
+.language{
+    float: right;
+    margin-top: 7px;
+    margin-right: 3px;
+}
+.learn{
+    text-decoration: none;
+    color: blue;
+}
+.popup{
+    display: none;
+    background-color: white;
+    border: 1px solid rgb(210,210,210);
+    padding: 11px;
+    font-size: 12px;
+    position: absolute;
+    top: 20px;
+    left: -340px;
+    width: 300px;
+    font-family: open_sans_n;
+    text-align: left;
+}
+.popup::after{
+    content: "";
+    position: absolute;
+    margin-left: -5px;
+    top: 4px;
+    left: 101%;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent white;
+}
+
+.text_input:focus + span , .phone_popup:focus + span {
+    display: block;
+}
+
+.next{
+    font-family: open_sans_l;
+}
+.serve{
+    text-decoration: none;
+    font-family: open_sans_b;
+}
+.form-element{
+    margin-bottom: 21px;
+    position: relative;
+}
+.gmail_placeholder{
+    color: grey;
+    position: absolute;
+    top: 28px;
+    right: 30px;
+    font-family: open_sans_n;
+    font-size: 14px;
+}
+.current:hover{
+    text-decoration: underline;
+}
+.learnmore_line{
+    position: absolute;
+    bottom: -30px;
+}
+
+@media only screen and (max-width: 910px)  {
+    .popup{
+        visibility: hidden;
+    }
+    .promo{
+        display: none;
+    }
+    .form{
+        width:268px;
+        float: none;
+    }
+    body{
+        background-color: rgb(240,240,240);
+    }
+    .create{
+        font-size: 20px;
+    }
+    header{
+        border-bottom: 1px solid rgb(220,220,220);
+    }
+    .text_input{
+        width: 108px;
+    }
+    .full_line{
+        width: 240px;
+    }
+    .bday{
+        width: 50px;
+    }
+    .bmonth{
+        width: 100px;
+    }
+    .byear{
+        width: 51px;
+    }
+    .Gender , .country_code{
+        width: 260px;
+    }
+    .Mobile{
+        width: 181px;
+    }
+    .signup{
+        width: 280px;
+    }
+}
