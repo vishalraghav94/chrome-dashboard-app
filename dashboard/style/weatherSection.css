@@ -1,0 +1,41 @@
+@font-face {
+    font-family: open_sans_l;
+    src: url(../../OpenSans-Light.woff);
+}
+@font-face {
+    font-family: open_sans_n;
+    src: url(../../OpenSans-Regular.woff);
+}
+@font-face {
+    font-family: open_sans_b;
+    src: url(../../OpenSans-Bold.woff);
+}
+.weather-section {
+    background-image: url('https://media.giphy.com/media/L1t2UD5ETsztu/giphy.gif');
+    background-size: cover;
+    width: 40%;
+    position: relative;
+    height: 300px;
+    background-color: #263238;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+}
+.weather-section:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.weather-icon {
+    position: absolute;
+    width: 30%;
+    left: 200px;
+    top: 10px;
+}
+.location-info {
+    color: white;
+    width: 30%;
+    font-size: 20px;
+    height: 100px;
+    margin-left: 20px;
+    padding: 10px;
+    font-family: open_sans_l;
+}

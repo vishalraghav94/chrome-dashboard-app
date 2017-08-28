@@ -7,10 +7,18 @@
     <script src="js/Services/weatherService.js"></script>
     <script src="js/Controllers/weatherController.js"></script>
     <script src="js/Directives/cloud.js"></script>
+    <link rel="stylesheet" href="style/weatherSection.css">
 </head>
 <body>
-<div ng-app="weatherSection" ng-controller="weatherController">
-    <cloud width="200" height="150"></cloud>
+<div class="weather-section" ng-app="weatherSection" ng-controller="weatherController">
+        <div class="info-bar">
+            <div class="weather-icon">
+                <cloud width="100" height="75"></cloud>
+            </div>
+            <div class="location-info">
+                <p>{{location.name}}</p>
+            </div>
+        </div>
 </div>
 
 </body>

@@ -7,8 +7,9 @@ weatherSection.controller('weatherController', ['$scope', '$interval', 'weather'
         })
     });
 
-
     function weatherSuccess(weatherObject) {
         console.log(weatherObject);
+        $scope.location = weatherObject.data.city;
+        $scope.currentWeather = weatherObject.data.list[2];
     }
 }]);
