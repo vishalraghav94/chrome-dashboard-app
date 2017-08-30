@@ -12,11 +12,11 @@ weatherSection.factory('weather', ['$http', function ($http) {
         tempUnitConverter: function (temp, currentUnit) {
             if (currentUnit === 'C') {
                 var farTemp = (9 / 5) * temp + 32;
-                return farTemp;
+                return farTemp.toFixed(0);
             }
             else {
                 var celTemp = (temp - 32) * (5 / 9);
-                return celTemp;
+                return celTemp.toFixed(0);
             }
 
         }

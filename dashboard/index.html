@@ -17,6 +17,21 @@
             </div>
             <div class="location-info">
                 <p>{{location.name}}</p>
+                <p style="font-size: 14px;">{{day}},  {{time}}</p>
+                <p style="font-size: 14px;">{{currentWeather.weather[0].description}}</p>
+            </div>
+            <div class="location-info air-info">
+                <p style="font-size: 14px;">Humidity: {{currentWeather.main.humidity}}%</p>
+                <p style="font-size: 14px;">Wind Speed: {{(currentWeather.wind.speed * 3.6).toFixed(0) | number }} Km/h</p>
+                <p style="font-size: 14px;">Pressure: {{currentWeather.main.pressure}} hPa</p>
+            </div>
+            <div class="temperature-box">
+                <div style="position: relative;">
+                    <h1>{{temp}}</h1>
+                    <button class="temp-unit celcius" ng-click="converter('F')">&#8451</button>
+                    <button class="temp-unit farenheit" ng-click="converter('C')">&#8457</button>
+                </div>
+
             </div>
         </div>
 </div>

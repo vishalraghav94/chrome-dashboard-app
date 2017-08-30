@@ -10,16 +10,18 @@
     font-family: open_sans_b;
     src: url(../../OpenSans-Bold.woff);
 }
+body {
+    margin: 0;
+}
 .weather-section {
     background-image: url('https://media.giphy.com/media/3oGRFvAHIY8cDgX1rG/giphy.gif');
     background-size: cover;
-    width: 40%;
+    width: 500px;
     position: relative;
     height: 300px;
     background-color: #263238;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    border-radius: 5px;
 }
 .weather-section:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -32,10 +34,46 @@
 }
 .location-info {
     color: white;
-    width: 30%;
-    font-size: 20px;
+    width: 36%;
+    font-size: 18px;
     height: 100px;
     margin-left: 20px;
     padding: 10px;
+    font-family: open_sans_n;
+}
+.location-info p {
+    margin: 0;
+}
+.air-info {
+    position: absolute;
+    right: 0px;
+    top: 3px;
+}
+.temperature-box {
+    color: white;
+    width: 30%;
+    font-size: 22px;
+    position: absolute;
+    top: 55px;
+    text-align: center;
+    left: 36%;
     font-family: open_sans_l;
+}
+.temp-unit {
+    position: absolute;
+    background: none;
+    border: none;
+    font-size: 13px;
+    color: white;
+    top: 10px;
+    outline: none;
+    cursor: pointer;
+}
+.celcius {
+    right: 27px;
+    color: #F9A825;
+}
+.farenheit {
+    right: 8px;
+    color: #FFFF00;
 }

@@ -11,7 +11,7 @@
   ],
   "browser_action": {
     "default_icon": "Images/in.png",
-    "default_popup": "index.html"
+    "default_popup": "dashboard/index.html"
   },
   "background": {
     "scripts": ["background.js"],
