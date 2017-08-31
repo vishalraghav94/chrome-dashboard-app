@@ -57,7 +57,7 @@ body {
     top: 55px;
     text-align: center;
     left: 36%;
-    font-family: open_sans_l;
+    font-family: open_sans_n;
 }
 .temp-unit {
     position: absolute;
@@ -81,5 +81,6 @@ body {
     text-align: center;
     list-style-type: none;
     margin: 30px 12px;
+    margin-bottom: -12px;
     width: 30%;
 }
