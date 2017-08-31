@@ -34,6 +34,24 @@
 
             </div>
         </div>
+    <div class="forecast">
+        <ul style="display: flex; padding-left: 14px;">
+            <li ng-repeat="forecast in forecastArray" class="forecast-list-item">
+                <div style="color: white;">
+                    <p style="margin-bottom: 6px;">{{forecast.currentDay}}</p>
+                    <p style="margin-top: 0; margin-bottom: 0">{{forecast.timeString}}</p>
+                </div>
+                <div>
+                    <cloud width="60" height="45"></cloud>
+                    <p style="color: white; margin-bottom: 4px; margin-top: 4px;">{{(forecast.main.temp - 273).toFixed(0)}}&#8451</p>
+                    <p style="color: white; margin-top: 0;
+                    margin-left: -10px;
+                    width: 129%;"
+                    >{{forecast.weather[0].description}}</p>
+                </div>
+            </li>
+        </ul>
+    </div>
 </div>
 
 </body>

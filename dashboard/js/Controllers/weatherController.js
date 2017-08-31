@@ -14,6 +14,7 @@ weatherSection.controller('weatherController', ['$scope', '$interval', 'weather'
         var days = ["Sunday", 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         $scope.location = weatherObject.data.city;
         $scope.currentWeather = weatherObject.data.list[1];
+        $scope.forecastArray = weatherObject.data.list.slice(2,7);
         var date = new Date();
         var dayIndex = date.getDay();
         $scope.day = days[dayIndex];
@@ -30,6 +31,23 @@ weatherSection.controller('weatherController', ['$scope', '$interval', 'weather'
                 farFlag = false;
                 celciusFlag = true;
             }
+        };
+        var newDayIndex = dayIndex;
+        console.log(dayIndex, newDayIndex);
+        var i;
+        for(i = 0; i < $scope.forecastArray.length; i++) {
+            var timeString = $scope.forecastArray[i].dt_txt.split(' ')[1].slice(0,5);
+            if(timeString === '00:00') {
+                console.log(timeString)
+                if(newDayIndex === 6) {
+                    newDayIndex = 0;
+                }
+                else {
+                    newDayIndex++;
+                }
+            }
+            $scope.forecastArray[i].currentDay = days[newDayIndex];
+            $scope.forecastArray[i].timeString = timeString;
         }
     }
 }]);

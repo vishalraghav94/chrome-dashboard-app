@@ -77,3 +77,9 @@ body {
     right: 8px;
     color: #FFFF00;
 }
+.forecast-list-item {
+    text-align: center;
+    list-style-type: none;
+    margin: 30px 12px;
+    width: 30%;
+}
