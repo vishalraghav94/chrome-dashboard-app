@@ -19,7 +19,7 @@ dashboard.directive('myBackground', ['$http', '$interval', function ($http, $int
                     scope.backgroundUrl = scope.background.url;
                     element[0].style.background = "url(" + scope.backgroundUrl + ")";
                     element[0].style.backgroundSize = 'cover';
-                }, 5000);
+                }, 10000);
             }, function (error) {
                 console.log('Error', error);
             });
