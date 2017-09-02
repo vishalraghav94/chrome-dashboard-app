@@ -1,5 +1,5 @@
 
-weatherSection.controller('weatherController', ['$scope', '$interval', 'weather', function ($scope, $interval, weather) {
+dashboard.controller('dashboardController', ['$scope', '$interval', 'weather', '$http', function ($scope, $interval, weather, $http) {
     $scope.weather = weather;
     navigator.geolocation.getCurrentPosition(function (success) {
         var promise = weather.getWeather(success.coords.latitude, success.coords.longitude);
@@ -50,4 +50,5 @@ weatherSection.controller('weatherController', ['$scope', '$interval', 'weather'
             $scope.forecastArray[i].timeString = timeString;
         }
     }
+
 }]);

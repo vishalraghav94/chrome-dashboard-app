@@ -1,4 +1,4 @@
-weatherSection.directive('cloud', [ function () {
+dashboard.directive('cloud', [ function () {
     return {
         restrict: 'EA',
         scope: {

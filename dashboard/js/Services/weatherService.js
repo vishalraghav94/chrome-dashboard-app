@@ -1,5 +1,5 @@
-var weatherSection = angular.module('weatherSection',[]);
-weatherSection.factory('weather', ['$http', function ($http) {
+var dashboard = angular.module('dashboard',[]);
+dashboard.factory('weather', ['$http', function ($http) {
     return {
         getWeather: function (lat, lon) {
             var apiKey = 'e2b42e6173ae7f50e33e50d460e2656e';
