@@ -51,4 +51,18 @@ dashboard.controller('dashboardController', ['$scope', '$interval', 'weather', '
         }
     }
 
+    /**
+     * to-do section of app starts here
+     */
+    $scope.tasks = [];
+
+    $scope.pushTask = function (task) {
+        if(($scope.tasks.indexOf(task) === -1) && (task !== '')) {
+            $scope.tasks.push(task);
+        }
+    };
+    $scope.popTask = function (index) {
+        $scope.tasks.splice(index, 1);
+    };
+
 }]);

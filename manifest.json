@@ -1,8 +1,8 @@
 {
-  "name": "Hello World",
+  "name": "Beautiful Dashboard",
   "version": "1.0",
   "manifest_version": 2,
-  "description": "My first Chrome extension.",
+  "description": "A dashboard with live HD backgrounds.",
   "permissions": [
     "notifications",
     "bookmarks",
