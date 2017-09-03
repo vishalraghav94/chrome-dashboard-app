@@ -65,16 +65,18 @@
 </div>
     <div class="to-do-section">
         <div class="task-list">
-            <ul>
-                <li class="task-list-item" ng-repeat="task in tasks">
+            <ul style="padding: 0">
+                <li class="task-heading">
+                    <span>Tasks not done yet:</span>
+                </li>
+                <li class="task-list-item" ng-repeat="task in tasks" ng-click="popTask($index)">
                    <span>{{task}}</span>
-                    <button ng-click="popTask($index)">x</button>
                 </li>
             </ul>
         </div>
         <div class="input-section">
-            <input type="text" ng-model="taskString">
-            <button ng-click="pushTask(taskString)">Click</button>
+            <input  class="input-task" type="text" ng-model="taskString">
+            <button class="button" ng-click="pushTask(taskString)">Add</button>
         </div>
     </div>
 </div>

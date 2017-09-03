@@ -54,15 +54,22 @@ dashboard.controller('dashboardController', ['$scope', '$interval', 'weather', '
     /**
      * to-do section of app starts here
      */
-    $scope.tasks = [];
+    $scope.tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
     $scope.pushTask = function (task) {
+        task = task.toLowerCase();
         if(($scope.tasks.indexOf(task) === -1) && (task !== '')) {
+            task = task.split('');
+            task[0] = task[0].toUpperCase();
+            task = task.join('');
             $scope.tasks.push(task);
         }
+        localStorage.setItem('tasks', JSON.stringify($scope.tasks));
     };
     $scope.popTask = function (index) {
+        console.log('index', index);
         $scope.tasks.splice(index, 1);
+        localStorage.setItem('tasks', JSON.stringify($scope.tasks));
     };
 
 }]);
