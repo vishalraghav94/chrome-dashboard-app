@@ -75,7 +75,7 @@
             </ul>
         </div>
         <div class="input-section">
-            <input  class="input-task" type="text" ng-model="taskString">
+            <input  class="input-task" type="text" ng-model="taskString" ng-keypress="add($event, taskString)">
             <button class="button" ng-click="pushTask(taskString)">Add</button>
         </div>
     </div>
