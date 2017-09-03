@@ -105,7 +105,7 @@ body {
     outline: none;
     padding: 6px 13px;
     font-size: 13px;
-    width: 17%;
+    width: 22%;
     float: right;
     border: none;
     vertical-align: top;
@@ -139,6 +139,7 @@ body {
     position: absolute;
     background-color: rgba(0,0,0,0.3);
     top: 10px;
+    border-radius: 5px;
     right: 10px;
 }
 .task-heading {
@@ -148,11 +149,11 @@ body {
     transition: background 0.3s linear;
     color: white;
     font-size: 15px;
-    cursor: pointer;
-    background-color: rgba(233,30,99 ,0.5);
+    margin-bottom: 8px;
+    background-color: rgba(69,90,100 ,0.8);
     font-family: open_sans_n;
 }
 .task-heading:hover {
-    background-color: rgba(233,30,99 ,0.7);
+    background-color: rgba(69,90,100 ,0.5);
 
 }

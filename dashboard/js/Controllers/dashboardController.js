@@ -73,6 +73,7 @@ dashboard.controller('dashboardController', ['$scope', '$interval', 'weather', '
     $scope.add = function (event, task) {
         if (event.key === 'Enter') {
             $scope.pushTask(task);
+            $scope.taskString = '';
         }
     }
 }]);
