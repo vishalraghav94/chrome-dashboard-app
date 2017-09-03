@@ -16,8 +16,10 @@ body {
 .weather-section {
     background-size: cover;
     width: 500px;
+    background-image: url('https://media.giphy.com/media/3oGRFvAHIY8cDgX1rG/giphy.gif');
     left: 10px;
     top: 10px;
+    background-color: #263238;
     position: relative;
     height: 300px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
