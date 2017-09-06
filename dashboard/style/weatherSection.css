@@ -199,7 +199,7 @@ body {
     color: white;
     position: absolute;
     left: -34px;
-    top: 0px;
+    top: -1px;
     padding-top: 7px;
     padding-left: 3px;
     transition: all 0.2s linear;
@@ -207,4 +207,8 @@ body {
 }
 .done:focus {
     background-color: black;
+}
+.task-done {
+    background-color: #1DE9B6;
+    left: 0px;
 }

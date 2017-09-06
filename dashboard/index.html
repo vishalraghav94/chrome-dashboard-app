@@ -67,11 +67,11 @@
         <div class="task-list">
             <ul style="padding: 0">
                 <li class="task-heading">
-                    <span>Tasks not done yet:</span>
+                    <span>Tasks :</span>
                 </li>
                 <li class="task-list-item" ng-repeat="task in tasks" >
-                    <span class="done" ng-click="taskDone($event)"><img style="width: 70%; pointer-events: none;" src="Images/done.png" alt="do" class="trash-img"></span>
-                   <span style="margin-left: 30px;">{{task}}</span>
+                    <span class="done" ng-class="{'task-done' : task.status}" ng-click="taskDone($event, $index)"><img style="width: 70%; pointer-events: none;" src="Images/done.png" alt="do" class="trash-img"></span>
+                   <span style="margin-left: 30px;">{{task.task}}</span>
                     <span class="trash" ng-click="popTask($index)"><img class="trash-img" src="Images/trash.png" alt="T"></span>
                 </li>
             </ul>

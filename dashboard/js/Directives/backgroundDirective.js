@@ -20,10 +20,10 @@ dashboard.directive('myBackground', ['$http', '$interval','$timeout', function (
                     scope.backgroundUrl = scope.background.url;
                     img = scope.preload(scope.backgroundUrl);
                     console.log(img.src);
-                    $timeout( function () {
+                    img.onload = function () {
                         element[0].style.background = "url(" + img.src + ")";
                         element[0].style.backgroundSize = 'cover';
-                    }, 2000);
+                    }
                 }, 20000);
             }, function (error) {
                 console.log('Error', error);

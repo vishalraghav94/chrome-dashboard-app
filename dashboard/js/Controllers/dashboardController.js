@@ -55,15 +55,18 @@ dashboard.controller('dashboardController', ['$scope', '$interval', 'weather', '
      * to-do section of app starts here
      */
     $scope.tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-
+    var taskObj= {};
     $scope.pushTask = function (task) {
         task = task.toLowerCase();
         task = task.split('');
         task[0] = task[0].toUpperCase();
         task = task.join('');
-        if(($scope.tasks.indexOf(task) === -1) && (task !== '')) {
-            $scope.tasks.push(task);
+        if(($scope.tasks.indexOfObj(task) === -1) && (task !== '')) {
+            taskObj.task = task;
+            taskObj.status = false;
+            $scope.tasks.push(taskObj);
             localStorage.setItem('tasks', JSON.stringify($scope.tasks));
+            taskObj = {};
         }
         $scope.taskString = '';
     };
@@ -75,10 +78,29 @@ dashboard.controller('dashboardController', ['$scope', '$interval', 'weather', '
         if (event.key === 'Enter') {
             $scope.pushTask(task);
         }
-    }
-    $scope.taskDone = function (event) {
+    };
+    $scope.taskDone = function (event, index) {
         var ele = event.srcElement;
         ele.style.backgroundColor = '#1DE9B6';
         ele.style.left = '0px';
+        $scope.tasks[index].status = true;
+        localStorage.setItem('tasks', JSON.stringify($scope.tasks));
+    };
+
+    /**
+     *
+     * self made function to check the presence of a string inside one of the objects present in array
+     * @param obj - string to be found inside the objects present in the array
+     * @returns {number} - index of the object which contains the 'obj' string
+     */
+    Array.prototype.indexOfObj = function (obj) {
+        var i;
+        console.log("my func : " ,this);
+        for(i = 0; i < this.length; i++) {
+            if(this[i].task === obj) {
+                return i;
+            }
+        }
+        return -1;
     }
 }]);
