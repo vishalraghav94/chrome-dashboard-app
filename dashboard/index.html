@@ -69,9 +69,10 @@
                 <li class="task-heading">
                     <span>Tasks not done yet:</span>
                 </li>
-                <li class="task-list-item" ng-repeat="task in tasks" ng-click="popTask($index)">
-                   <span>{{task}}</span>
-                    <span class="trash"><img class="trash-img" src="Images/trash.png" alt="T"></span>
+                <li class="task-list-item" ng-repeat="task in tasks" >
+                    <span class="done" ng-click="taskDone($event)"><img style="width: 70%; pointer-events: none;" src="Images/done.png" alt="do" class="trash-img"></span>
+                   <span style="margin-left: 30px;">{{task}}</span>
+                    <span class="trash" ng-click="popTask($index)"><img class="trash-img" src="Images/trash.png" alt="T"></span>
                 </li>
             </ul>
         </div>

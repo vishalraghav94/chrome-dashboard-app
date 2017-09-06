@@ -76,4 +76,9 @@ dashboard.controller('dashboardController', ['$scope', '$interval', 'weather', '
             $scope.pushTask(task);
         }
     }
+    $scope.taskDone = function (event) {
+        var ele = event.srcElement;
+        ele.style.backgroundColor = '#1DE9B6';
+        ele.style.left = '0px';
+    }
 }]);

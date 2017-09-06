@@ -109,6 +109,9 @@ body {
 .task-list-item:hover .trash {
     width: 33px;
 }
+.task-list-item:hover .done {
+    left: 0px;
+}
 .button {
     outline: none;
     padding: 6px 13px;
@@ -187,4 +190,21 @@ body {
 .trash-img {
     width: 60%;
     height: 72%;
+}
+.done {
+    float: right;
+    background-color: #FF9800;
+    height: 35px;
+    width: 32px;
+    color: white;
+    position: absolute;
+    left: -34px;
+    top: 0px;
+    padding-top: 7px;
+    padding-left: 3px;
+    transition: all 0.2s linear;
+    text-align: center;
+}
+.done:focus {
+    background-color: black;
 }

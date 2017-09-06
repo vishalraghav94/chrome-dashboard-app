@@ -24,7 +24,7 @@ dashboard.directive('myBackground', ['$http', '$interval','$timeout', function (
                         element[0].style.background = "url(" + img.src + ")";
                         element[0].style.backgroundSize = 'cover';
                     }, 2000);
-                }, 8000);
+                }, 20000);
             }, function (error) {
                 console.log('Error', error);
             });
