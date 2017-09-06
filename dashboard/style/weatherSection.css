@@ -18,6 +18,7 @@ body {
     width: 500px;
     background-image: url('https://media.giphy.com/media/3oGRFvAHIY8cDgX1rG/giphy.gif');
     left: 10px;
+    padding-right: 10px;
     top: 10px;
     background-color: #263238;
     position: relative;
