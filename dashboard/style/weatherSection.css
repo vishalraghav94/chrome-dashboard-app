@@ -96,12 +96,15 @@ body {
     height: 34px;
     overflow: hidden;
     font-size: 15px;
+    position: relative;
     cursor: pointer;
     background-color: rgba(0,0,0,0.3);
     font-family: open_sans_n;
+    border-radius: 16px;
 }
 .task-list-item:hover {
     background-color: rgba(0,0,0,0.6);
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
 }
 .task-list-item:hover .trash {
     width: 33px;
@@ -112,6 +115,9 @@ body {
     font-size: 13px;
     width: 22%;
     float: right;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    border-radius: 16px;
     border: none;
     vertical-align: top;
     color: white;
@@ -128,6 +134,9 @@ body {
     padding: 6px 9px;
     font-size: 13px;
     color: white;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    border-radius: 16px;
     background-color: rgba(0,0,0,0.4);
     border: 0;
     transition: background 0.3s linear;
@@ -150,6 +159,7 @@ body {
 .task-heading {
     padding: 7px;
     margin: 2px;
+    border-radius: 16px;
     list-style: none;
     transition: background 0.3s linear;
     color: white;
@@ -166,14 +176,15 @@ body {
     float: right;
     background-color: rgba(255,255,255,1);
     width: 0px;
-    height: 34px;
-    margin-top: -7px;
+    height: 35px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
     padding-top: 7px;
-    transition: width 0.3s linear;
-    margin-right: -6px;
+    transition: width 0.2s linear;
     text-align: center;
 }
 .trash-img {
-    width: 70%;
-    height: 83%;
+    width: 60%;
+    height: 72%;
 }

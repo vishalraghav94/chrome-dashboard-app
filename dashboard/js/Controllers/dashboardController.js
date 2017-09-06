@@ -65,6 +65,7 @@ dashboard.controller('dashboardController', ['$scope', '$interval', 'weather', '
             $scope.tasks.push(task);
             localStorage.setItem('tasks', JSON.stringify($scope.tasks));
         }
+        $scope.taskString = '';
     };
     $scope.popTask = function (index) {
         $scope.tasks.splice(index, 1);
@@ -73,7 +74,6 @@ dashboard.controller('dashboardController', ['$scope', '$interval', 'weather', '
     $scope.add = function (event, task) {
         if (event.key === 'Enter') {
             $scope.pushTask(task);
-            $scope.taskString = '';
         }
     }
 }]);
