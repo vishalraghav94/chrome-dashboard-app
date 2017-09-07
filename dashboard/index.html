@@ -7,6 +7,7 @@
     <script src="js/Services/weatherService.js"></script>
     <script src="js/Controllers/dashboardController.js"></script>
     <script src="js/Directives/backgroundDirective.js"></script>
+    <script src="js/Directives/myDraggable.js"></script>
     <script src="js/Directives/cloud.js"></script>
     <link rel="stylesheet" href="style/weatherSection.css">
 </head>
@@ -19,7 +20,7 @@
 </style>
 <body>
 <div class="dashboard" my-background="" ng-app="dashboard" ng-controller="dashboardController">
-    <div class="weather-section" style="background: rgba(0,0,0,0.3);">
+    <div class="weather-section" style="background: rgba(0,0,0,0.3);" my-draggable>
     <div class="info-bar">
         <div class="weather-icon">
             <cloud width="100" height="75" colored="'azure'"></cloud>
@@ -63,7 +64,7 @@
         </ul>
     </div>
 </div>
-    <div class="to-do-section">
+    <div class="to-do-section" my-draggable>
         <div class="task-list">
             <ul style="padding: 0">
                 <li class="task-heading">

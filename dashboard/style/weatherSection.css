@@ -24,7 +24,7 @@ body {
     position: relative;
     height: 300px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
+    transition: box-shadow 0.3s linear;
     border-radius: 5px;
 }
 .weather-section:hover {
@@ -154,11 +154,10 @@ body {
 .to-do-section {
     width: 400px;
     padding: 15px;
-    position: absolute;
     background-color: rgba(0,0,0,0.3);
-    top: 10px;
     border-radius: 5px;
-    right: 10px;
+    top: -294px;
+    left: 877px;
 }
 .task-heading {
     padding: 7px;
