@@ -81,10 +81,18 @@ dashboard.controller('dashboardController', ['$scope', '$interval', 'weather', '
     };
     $scope.taskDone = function (event, index) {
         var ele = event.srcElement;
-        ele.style.backgroundColor = '#1DE9B6';
-        ele.style.left = '0px';
-        $scope.tasks[index].status = true;
-        localStorage.setItem('tasks', JSON.stringify($scope.tasks));
+        if($scope.tasks[index].status === false) {
+            ele.style.backgroundColor = '#1DE9B6';
+            ele.style.left = '0px';
+            $scope.tasks[index].status = true;
+            localStorage.setItem('tasks', JSON.stringify($scope.tasks));
+        }
+        else {
+            ele.style.backgroundColor = '#FF9800';
+            ele.style.left = '';
+            $scope.tasks[index].status = false;
+            localStorage.setItem('tasks', JSON.stringify($scope.tasks));
+        }
     };
 
     /**
@@ -95,7 +103,6 @@ dashboard.controller('dashboardController', ['$scope', '$interval', 'weather', '
      */
     Array.prototype.indexOfObj = function (obj) {
         var i;
-        console.log("my func : " ,this);
         for(i = 0; i < this.length; i++) {
             if(this[i].task === obj) {
                 return i;
