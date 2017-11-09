@@ -56,27 +56,34 @@ dashboard.controller('dashboardController', ['$scope', '$interval', 'weather', '
      */
     $scope.tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     var taskObj= {};
-    $scope.pushTask = function (task) {
+    $scope.pushTask = function (task, time) {
         task = task.toLowerCase();
         task = task.split('');
         task[0] = task[0].toUpperCase();
         task = task.join('');
+        var date = new Date(time + '');
         if(($scope.tasks.indexOfObj(task) === -1) && (task !== '')) {
             taskObj.task = task;
             taskObj.status = false;
+            if(date) {
+                console.log(date);
+                taskObj.date = JSON.stringify(date);
+                //console.log(taskObj.getTaskDate());
+            }
             $scope.tasks.push(taskObj);
             localStorage.setItem('tasks', JSON.stringify($scope.tasks));
             taskObj = {};
         }
         $scope.taskString = '';
+        $scope.taskTime = '';
     };
     $scope.popTask = function (index) {
         $scope.tasks.splice(index, 1);
         localStorage.setItem('tasks', JSON.stringify($scope.tasks));
     };
-    $scope.add = function (event, task) {
+    $scope.add = function (event, task, time) {
         if (event.key === 'Enter') {
-            $scope.pushTask(task);
+            $scope.pushTask(task, time);
         }
     };
     $scope.taskDone = function (event, index) {
@@ -110,4 +117,36 @@ dashboard.controller('dashboardController', ['$scope', '$interval', 'weather', '
         }
         return -1;
     }
+    var i = 0, j =0;
+    $scope.alertTask = "Current task";
+    function greetTask() {
+        var tasks = JSON.parse(localStorage.getItem('tasks'));
+        var currentDate = new Date();
+        if(tasks && tasks.length) {
+            if (i >= tasks.length) {
+                i = 0;
+            }
+            var tempDate1 = tasks[i].date.substr(0, tasks[i].date.lastIndexOf('.'));
+            var tempDate2 = JSON.stringify(currentDate).substr(0, JSON.stringify(currentDate).lastIndexOf('.'));
+            if(j >= 60) {
+                console.log(tempDate1, tempDate2);
+                j = 0;
+            }
+
+            if (tempDate1 === tempDate2) {
+                $scope.alertTask = tasks[i].task;
+                console.log("hello this is my time: ", tasks[i].task);
+                document.getElementsByClassName('alert-task')[0].style.top = '0px';
+                $scope.popTask(i);
+                window.setTimeout(function() {
+                    document.getElementsByClassName('alert-task')[0].style.top = '-59px';
+                }, 3000, true);
+            }
+            i++;
+            j++;
+        }
+        window.requestAnimationFrame(greetTask);
+
+    }
+    window.requestAnimationFrame(greetTask);
 }]);

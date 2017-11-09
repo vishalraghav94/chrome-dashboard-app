@@ -147,6 +147,7 @@ body {
     font-family: open_sans_n;
     outline: none;
     margin-left: 2px;
+    margin-bottom: 5px;
 }
 .input-task:focus{
     background-color: rgba(0,0,0,0.7);
@@ -211,4 +212,19 @@ body {
 .task-done {
     background-color: #1DE9B6;
     left: 0px;
+}
+.alert-task {
+    padding: 16px;
+    background-color: black;
+    color: white;
+    font-size: 23px;
+    text-align: center;
+    width: 30%;
+    position: absolute;
+    top: -59px;
+    right: 38%;
+    transition: top 1s;
+}
+.alert-task-active {
+    top: 0;
 }
