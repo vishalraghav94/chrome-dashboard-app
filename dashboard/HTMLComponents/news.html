@@ -1,0 +1,91 @@
+<style>
+    .transparent-black * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+    .transparent-black {
+        /* background: rgba(0, 0, 0, 0.3); */
+        background: transparent;
+        position: relative;
+        cursor: -webkit-grab;
+        top: 8px;
+        left: 8px;
+        width: 500px;
+        height: 344px;
+        overflow: scroll;
+        padding: 7px;
+        border-radius: 10px;
+    }
+    .news-list-item {
+        display: block;
+        /* padding: 8px; */
+        padding-left: 0;
+        color: black;
+        background-color: rgba(255,255,255,0.4);
+        margin: 2px 0px;
+        font-family: open_sans_n;
+        border-radius: 4px;
+        transition: background-color 0.5s;
+    }
+    .news-list-item:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+    .news-image {
+        width: 100%;
+        vertical-align: bottom;
+        border-radius: 4px 0 0 4px;
+        user-select: none;
+    }
+    .image-container {
+        display: inline-block;
+        width: 25%;
+        margin-right: 8px;
+        margin-left: 0;
+    }
+    .title-container {
+        display: inline-block;
+        width: 72%;
+        color: black;
+        font-size: 8px;
+        user-select: none;
+        padding: 5px;
+        vertical-align: top;
+    }
+    .pop-up {
+        font-size: 18px;
+        overflow: hidden;
+        padding: 0;
+        background-color: transparent;
+        user-select: none;
+        height: 0;
+        transition: height 0.5s, padding 0.5s, margin 0.5s, background-color 0.3s;
+    }
+    .pop-up-show {
+        height: 150px;
+        padding: 10px;
+        margin-top: 10px;
+        overflow-y: scroll;
+    }
+    .pop-up:hover {
+        background-color: rgba(255,255,255,0.6);
+    }
+</style>
+<div class="transparent-black">
+    <ul class="reset-css">
+        <li class="news-list-item" ng-repeat="data in weatherData" ng-click="showDesc($event)">
+            <div class="image-container">
+                <img class="news-image" ng-src="{{data.urlToImage}}" alt="news.jpg">
+            </div>
+            <div class="title-container">
+                    <h2>{{data.title}}</h2>
+            </div>
+            <div class="pop-up" ng-if="data.description">
+                {{data.description}}
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="pop-up">
+    {{currentNews.description}}
+</div>

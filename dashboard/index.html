@@ -5,10 +5,12 @@
     <title>Dashboard</title>
     <script src="js/angular.min.js"></script>
     <script src="js/Services/weatherService.js"></script>
+    <script src="js/Services/newsService.js"></script>
     <script src="js/Controllers/dashboardController.js"></script>
     <script src="js/Directives/backgroundDirective.js"></script>
     <script src="js/Directives/myDraggable.js"></script>
     <script src="js/Directives/cloud.js"></script>
+    <script src="js/Directives/newsDirective.js"></script>
     <link rel="stylesheet" href="style/weatherSection.css">
 </head>
 <style>
@@ -85,6 +87,9 @@
         </div>
     </div>
     <div class="alert-task"><span>{{alertTask}}</span></div>
+    <div style="position: absolute; top: 10px; width: 40%;" my-draggable>
+        <my-news country="'in'" category="'science'"></my-news>
+    </div>
 </div>
 </body>
 </html>
