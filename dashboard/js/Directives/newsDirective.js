@@ -18,11 +18,20 @@ dashboard.directive('myNews', ['$http', '$interval','$timeout', 'news', function
 
            }
            scope.showDesc = function (event) {
-               if (event.target.classList.contains('news-list-item')) {
+               /*if (event.target.classList.contains('news-list-item')) {
                    event.target.getElementsByClassName('pop-up')[0].classList.toggle('pop-up-show');
+                   $(event.target).find('.image-container').toggleClass('image-container-full');
                }
                else if (event.target.parentElement.classList.contains('news-list-item')) {
                    event.target.parentElement.getElementsByClassName('pop-up')[0].classList.toggle('pop-up-show');
+               }*/
+               if ($(event.target).parentsUntil('.news-list-item').parent().hasClass('news-list-item')) {
+                   $(event.target).parentsUntil('.news-list-item').parent().find('.pop-up').toggleClass('pop-up-show');
+                   $(event.target).parentsUntil('.news-list-item').parent().find('.image-container').toggleClass('image-container-full');
+               }
+               else {
+                   $(event.target).find('.pop-up').toggleClass('pop-up-show');
+                   $(event.target).find('.image-container').toggleClass('image-container-full');
                }
            }
         }

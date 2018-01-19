@@ -22,14 +22,14 @@
         /* padding: 8px; */
         padding-left: 0;
         color: black;
-        background-color: rgba(255,255,255,0.4);
+        background-color: rgba(0, 0, 0, 0.2);
         margin: 2px 0px;
         font-family: open_sans_n;
         border-radius: 4px;
         transition: background-color 0.5s;
     }
     .news-list-item:hover {
-        background-color: rgba(255, 255, 255, 0.5);
+        background-color: rgba(0, 0, 0, 0.3);
     }
     .news-image {
         width: 100%;
@@ -42,11 +42,16 @@
         width: 25%;
         margin-right: 8px;
         margin-left: 0;
+        transition: width 0.5s, padding 0.5s;
+    }
+    .image-container-full {
+        width: 100%;
+        padding: 5px;
     }
     .title-container {
         display: inline-block;
         width: 72%;
-        color: black;
+        color: white;
         font-size: 8px;
         user-select: none;
         padding: 5px;
@@ -66,6 +71,7 @@
         padding: 10px;
         margin-top: 10px;
         overflow-y: scroll;
+        pointer-events: none;
     }
     .pop-up:hover {
         background-color: rgba(255,255,255,0.6);
