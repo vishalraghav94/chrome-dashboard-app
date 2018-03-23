@@ -221,9 +221,9 @@ body {
     text-align: center;
     width: 30%;
     position: absolute;
-    top: -59px;
+    top: -70px;
     right: 38%;
-    transition: top 1s;
+    transition: top 2s;
 }
 .alert-task-active {
     top: 0;

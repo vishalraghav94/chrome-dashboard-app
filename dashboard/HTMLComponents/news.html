@@ -3,6 +3,7 @@
         margin: 0;
         padding: 0;
         border: 0;
+        overflow: hidden;
     }
     .transparent-black {
         /* background: rgba(0, 0, 0, 0.3); */
@@ -13,9 +14,18 @@
         left: 8px;
         width: 500px;
         height: 344px;
-        overflow: scroll;
+        overflow-y: scroll;
         padding: 7px;
         border-radius: 10px;
+    }
+    *::-webkit-scrollbar {
+        width: 5px;
+    }
+    *::-webkit-scrollbar-track {
+        background-color: rgba(0,0,0,0.4);
+    }
+    *::-webkit-scrollbar-thumb {
+        background: black;
     }
     .news-list-item {
         display: block;
@@ -56,6 +66,7 @@
         user-select: none;
         padding: 5px;
         vertical-align: top;
+        font-weight: lighter;
     }
     .pop-up {
         font-size: 18px;
@@ -64,6 +75,7 @@
         background-color: transparent;
         user-select: none;
         height: 0;
+        color: white;
         transition: height 0.5s, padding 0.5s, margin 0.5s, background-color 0.3s;
     }
     .pop-up-show {
@@ -81,10 +93,11 @@
     <ul class="reset-css">
         <li class="news-list-item" ng-repeat="data in weatherData" ng-click="showDesc($event)">
             <div class="image-container">
-                <img class="news-image" ng-src="{{data.urlToImage}}" alt="news.jpg">
+                <img class="news-image" ng-if="data.urlToImage" ng-src="{{data.urlToImage}}" alt="news.jpg">
+                <img class="news-image" ng-if="!data.urlToImage" src="Images/not_found.png" alt="news.jpg">
             </div>
             <div class="title-container">
-                    <h2>{{data.title}}</h2>
+                <h2>{{data.title}}</h2>
             </div>
             <div class="pop-up" ng-if="data.description">
                 {{data.description}}

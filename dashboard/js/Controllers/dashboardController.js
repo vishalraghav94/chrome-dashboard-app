@@ -118,7 +118,7 @@ dashboard.controller('dashboardController', ['$scope', '$interval', 'weather', '
         return -1;
     }
     var i = 0, j =0;
-    $scope.alertTask = "Current task";
+    $scope.alertTask;
     function greetTask() {
         var tasks = JSON.parse(localStorage.getItem('tasks'));
         var currentDate = new Date();
@@ -129,7 +129,6 @@ dashboard.controller('dashboardController', ['$scope', '$interval', 'weather', '
             var tempDate1 = tasks[i].date.substr(0, tasks[i].date.lastIndexOf('.'));
             var tempDate2 = JSON.stringify(currentDate).substr(0, JSON.stringify(currentDate).lastIndexOf('.'));
             if(j >= 60) {
-                console.log(tempDate1, tempDate2);
                 j = 0;
             }
 
@@ -139,7 +138,7 @@ dashboard.controller('dashboardController', ['$scope', '$interval', 'weather', '
                 document.getElementsByClassName('alert-task')[0].style.top = '0px';
                 $scope.popTask(i);
                 window.setTimeout(function() {
-                    document.getElementsByClassName('alert-task')[0].style.top = '-59px';
+                    document.getElementsByClassName('alert-task')[0].style.top = '-70px';
                 }, 3000, true);
             }
             i++;
