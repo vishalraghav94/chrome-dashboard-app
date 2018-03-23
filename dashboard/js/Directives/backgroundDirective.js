@@ -12,7 +12,7 @@ dashboard.directive('myBackground', ['$http', '$interval','$timeout', function (
                 scope.background = scope.backgrounds[scope.index];
                 scope.backgroundUrl = scope.background.url;
                 console.log(scope.backgroundUrl);
-                element[0].style.background = "url(" + scope.backgroundUrl + "), url('Images/not_found.png')";
+                element[0].style.background = "url(" + scope.backgroundUrl + "), url('Images/fallback_background.jpg')";
                 element[0].style.backgroundSize = 'cover';
                 $interval (function () {
                     scope.index = Math.floor(Math.random() * (701 - 0 + 1));
@@ -21,7 +21,7 @@ dashboard.directive('myBackground', ['$http', '$interval','$timeout', function (
                     img = scope.preload(scope.backgroundUrl);
                     console.log(img.src);
                     img.onload = function () {
-                        element[0].style.background = "url(" + img.src + "), url('Images/not_found.png')";
+                        element[0].style.background = "url(" + img.src + "), url('Images/fallback_background.jpg')";
                         element[0].style.backgroundSize = 'cover';
                     }
                 }, 20000);

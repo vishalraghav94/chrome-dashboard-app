@@ -24,7 +24,7 @@
 </style>
 <body>
 <div class="dashboard" my-background="" ng-app="dashboard" ng-controller="dashboardController">
-    <div class="weather-section" style="background: rgba(0,0,0,0.3);" my-draggable>
+    <div class="weather-section" ng-style="{'visibility': currentWeather ? 'visible' : 'hidden'}" style="background: rgba(0,0,0,0.3);" my-draggable>
         <div class="info-bar">
             <div class="weather-icon">
                 <cloud width="100" height="75" colored="'azure'"></cloud>
